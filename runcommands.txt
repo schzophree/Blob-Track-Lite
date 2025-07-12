@@ -2,7 +2,9 @@
 
 >> Step2 : Navigate to your project folder:
 
+```bash
 cd C:\Users\Downloads\Blob-Track-Lite
+```
 
 >> Step3 : You need to create the virtual environment first. Run this command:
 
