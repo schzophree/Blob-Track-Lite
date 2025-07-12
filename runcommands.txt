@@ -4,23 +4,27 @@
 
 cd C:\Users\Downloads\Blob-Track-Lite
 
->> Step3 : To activate venv, use this command:
+>> Step3 : You need to create the virtual environment first. Run this command:
+
+python -m venv .venv
+
+>> Step4 : To activate venv, use this command:
 
 .\.venv\Scripts\activate
 
->> Step3 : Then, install the requirements
+>> Step5 : Then, install the requirements
 
 pip install -r requirements.txt
 
->> Step4 : Run command:
+>> Step6 : Run command:
 
 python main.py
 
->> Step5 : Now paste the input video path
+>> Step7 : Now paste the input video path
 
 For ex : C:\Users\Videos\input.mp4
 
->> Step6 : Then paste output video file path (leave blank to save in Downloads)
+>> Step8 : Then paste output video file path (leave blank to save in Downloads)
 
 #------------ Your video will be processed and saved. Go check the output destination! -------------#
 
