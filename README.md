@@ -6,7 +6,7 @@ Blob-Track-Lite is a simple Python-based implementation of blob tracking for vid
 
 - Python 3.9+
 
-- FFmpeg (To install ffmpeg, view this file[ffmpeg-installation.txt](https://github.com/XO-NOVA/Blob-Track-Lite/blob/main/ffmpeg-installation.txt))
+- FFmpeg (To install ffmpeg, view this file [ffmpeg-installation.txt](https://github.com/XO-NOVA/Blob-Track-Lite/blob/main/ffmpeg-installation.txt))
    
 
 ## Afterwards installing Requirements
@@ -18,4 +18,6 @@ Blob-Track-Lite is a simple Python-based implementation of blob tracking for vid
 pip install -r requirements.txt
 python main.py
 ```
+
+### Credits goes to Instagram : [lia.likescookies](https://www.instagram.com/lia.likescookies)
 
