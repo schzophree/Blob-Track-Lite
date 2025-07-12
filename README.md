@@ -1,4 +1,4 @@
-## Blob-Track-Lite (Offline)
+## Blob-Tracking (Offline)
 
 Blob-Track-Lite is a simple Python-based implementation of blob tracking for videos, made without TouchDesigner and runs smoothly without requiring a GPU.
 
@@ -18,5 +18,5 @@ Blob-Track-Lite is a simple Python-based implementation of blob tracking for vid
 pip install -r requirements.txt
 python main.py
 ```
-- Credits goes to [IG : Lia.likescookies](https://www.instagram.com/lia.likescookies) 👍🏻💯
+- Credits goes to [IG : Lia.likescookies](https://www.instagram.com/lia.likescookies) 👍🏻
 
