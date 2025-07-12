@@ -14,6 +14,7 @@ Blob-Track-Lite is a simple Python-based implementation of blob tracking for vid
 ### Use this commands (For full explaination : View runcommands.txt file)
 
 ```bash
+python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
 python main.py
