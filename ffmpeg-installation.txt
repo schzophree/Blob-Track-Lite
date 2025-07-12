@@ -1,0 +1,43 @@
+To install FFMPEG
+---------------------
+
+🔹 Step 1: Download FFmpeg
+---------------------------
+
+Go to: https://ffmpeg.org/download.html
+
+Click Windows > Then click on "Windows builds by Gyan.dev"
+
+Download the "essentials" zip (e.g., ffmpeg-release-essentials.zip)
+
+
+
+🔹 Step 2: Extract and Move
+-------------------------------
+Extract the ZIP file
+
+Rename the extracted folder to ffmpeg
+
+Move it to:
+C:\ffmpeg
+
+Now the path to the bin folder should be:
+C:\ffmpeg\bin\ffmpeg.exe
+
+
+
+🔹 Step 3: Add FFmpeg to System PATH
+--------------------------------------
+Press Windows Key → Search: Environment Variables
+
+Click "Edit the system environment variables"
+
+In the System Properties window, click Environment Variables
+
+Under System Variables, find and click on Path → Click Edit
+
+Click New, and add:
+
+C:\ffmpeg\bin
+
+Click OK to close all windows.
