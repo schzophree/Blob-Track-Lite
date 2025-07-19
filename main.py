@@ -12,6 +12,7 @@ import librosa
 import moviepy.editor as mpy
 import numpy as np
 import ffmpeg
+import string
 
 # Suppress only specific MoviePy warning
 warnings.filterwarnings(
@@ -61,6 +62,10 @@ def _sample_size_bell(min_s: int, max_s: int, width_div: float = 6.0) -> int:
         if min_s <= val <= max_s:
             return int(val)
     return int(np.clip(val, min_s, max_s))
+
+def _generate_random_text(length: int = 8) -> str:
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choice(characters) for _ in range(length))
 
 
 def render_tracked_effect(
@@ -125,8 +130,7 @@ def render_tracked_effect(
                     tp.life -= 1
                     if jitter_px > 0:
                         tp.pos += np.random.normal(0, jitter_px, size=2)
-                        tp.pos[0] = np.clip(tp.pos[0], 0, w - 1)
-                        tp.pos[1] = np.clip(tp.pos[1], 0, h - 1)
+                        tp.pos = np.clip(tp.pos, [0, 0], [w - 1, h - 1])
                     new_active.append(tp)
             active = new_active
 
@@ -171,6 +175,17 @@ def render_tracked_effect(
                 frame[tl[1]:br[1], tl[0]:br[0]] = 255 - roi
             cv2.rectangle(frame, tl, br, (200, 200, 255), 1)
 
+            text = _generate_random_text()
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            font_scale = 0.4
+            font_thickness = 1
+            text_size = cv2.getTextSize(text, font, font_scale, font_thickness)[0]
+            text_x = int(x + s // 2 + 5)
+            text_y = int(y - s // 2 - 5)
+            # Psa
+            if 0 <= text_x < w and 0 <= text_y >= text_size[1]:
+                cv2.putText(frame, text, (text_x, text_y), font, font_scale, (200, 200, 255), font_thickness, cv2.LINE_AA)
+
         prev_gray = gray
         return frame
 
@@ -199,8 +214,10 @@ def funny_loading_bar():
     for i in range(0, 101):
         time.sleep(0.03 if i < 90 else 0.01)
         bar = ('█' * (i // 2)).ljust(50)
+        # ngacak ngawur untuk indexing
+        stage_text = stages[i // 10 % len(stages)] if i % 10 == 0 else ''
         sys.stdout.write(
-            f"\r[{bar}] {i}%  {stages[i // 10 % len(stages)] if i % 10 == 0 else ''}   "
+            f"\r[{bar}] {i}%  {stage_text}    "
         )
         sys.stdout.flush()
     print("\nRender prep complete!")
