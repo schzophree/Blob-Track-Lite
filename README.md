@@ -1,5 +1,8 @@
 ## Blob-Tracking (Offline) (schzophree edit recode)
 
+Add:
+**+ Retangle with random text**
+
 Blob-Track-Lite is a simple Python-based implementation of blob tracking for videos, made without TouchDesigner and runs smoothly without requiring a GPU.
 
 ## Requirements
